@@ -16,6 +16,13 @@ module.exports = (sequelize, DataTypes) => {
         as: 'user',
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE'
+      }),
+
+      Music.hasMany(models.MusicSheet, {
+        foreignKey: 'music_id',
+        as: 'music',
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE'
       })
     }
   }
@@ -28,6 +35,7 @@ module.exports = (sequelize, DataTypes) => {
       references: {
         model: 'users',
         key: 'id'
+      } 
     },
     title: {
       type: DataTypes.STRING,
@@ -41,6 +49,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false
     },
+    description: {
+      type: DataTypes.TEXT,
+      allowNull: false
+    }
   }, {
     sequelize,
     modelName: 'Music',
