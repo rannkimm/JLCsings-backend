@@ -42,7 +42,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     },
     category: {
-      type: DataTypes.STRING,
+      type: DataTypes.ARRAY,
       allowNull: false
     },
     video: {

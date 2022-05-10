@@ -8,25 +8,37 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      music: {
-        type: Sequelize.STRING
+      music_id: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        field: 'music_id',
+        onDelete: 'CASCADE',
+        references: {
+        model: 'musics',
+        key: 'id'
+        }
       },
       title: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
       },
       image: {
-        type: Sequelize.STRING
+        type: Sequelize.OID,
+        allowNull: false
       },
       key: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: new Date()
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: new Date()
       }
     });
   },

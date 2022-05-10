@@ -8,31 +8,41 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      user: {
-        type: Sequelize.STRING
+      user_id: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        field: 'user_id',
+        onDelete: 'CASCADE',
+        references: {
+          model: 'users',
+          key: 'id'
+        } 
       },
       title: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
       },
       category: {
-        type: Sequelize.STRING
-      },
-      key: {
-        type: Sequelize.STRING
+        type: Sequelize.ARRAY,
+        allowNull: false
       },
       video: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
       },
-      image: {
-        type: Sequelize.STRING
+      description: {
+        type: Sequelize.TEXT,
+        allowNull: false,
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: new Date()
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: new Date()
       }
     });
   },
