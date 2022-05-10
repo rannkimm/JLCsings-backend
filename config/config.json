@@ -1,0 +1,17 @@
+{
+  "development": {
+    "database": "JLCsings",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "database": "JLCsings",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "database": "JLCsings",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
