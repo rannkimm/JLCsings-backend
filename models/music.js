@@ -16,10 +16,8 @@ module.exports = (sequelize, DataTypes) => {
   music.init({
     user: DataTypes.STRING,
     title: DataTypes.STRING,
-    category: DataTypes.STRING,
-    key: DataTypes.STRING,
-    video: DataTypes.STRING,
-    image: DataTypes.STRING
+    category: DataTypes.ARRAY,
+    video: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'music',
