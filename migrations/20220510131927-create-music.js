@@ -1,7 +1,9 @@
 'use strict';
+
+
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('music', {
+    await queryInterface.createTable('musics', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -23,7 +25,7 @@ module.exports = {
         allowNull: false
       },
       category: {
-        type: Sequelize.ARRAY,
+        type: Sequelize.ARRAY(Sequelize.STRING),
         allowNull: false
       },
       video: {

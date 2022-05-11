@@ -23,7 +23,7 @@ module.exports = {
         allowNull: false
       },
       image: {
-        type: Sequelize.OID,
+        type: Sequelize.BLOB,
         allowNull: false
       },
       key: {

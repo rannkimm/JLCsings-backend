@@ -35,7 +35,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     },
     image: {
-      type: DataTypes.OID,
+      type: DataTypes.BLOB,
       allowNull: false
     },
     key: {
