@@ -1,24 +1,29 @@
 'use strict';
 
 module.exports = {
-  async up (queryInterface, Sequelize) {
-    /**
-     * Add seed commands here.
-     *
-     * Example:
-     * await queryInterface.bulkInsert('People', [{
-     *   name: 'John Doe',
-     *   isBetaMember: false
-     * }], {});
-    */
+  up: async (queryInterface, Sequelize) => {
+    await queryInterface.bulkInsert(
+      'musics',
+      [
+        {
+          user_id: 1,
+          title: '왕이신 나의 하나님',
+          category: ['입례송', '느린송', '기도송', '축도송'],
+          video: '<iframe width="1031" height="580" src="https://www.youtube.com/embed/CaIKkfEhEOY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+          description: '원래 F-key 찬양입니다. G-key 와 A-key 악보도 있습니다!'
+        },
+        {
+          user_id: 2,
+          title: '내 손을 주께 높이 듭니다',
+          category: ['입례송', '느린송', '기도송'],
+          video: '<iframe width="1031" height="580" src="https://www.youtube.com/embed/-hatwOlbYTM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+          description: '원래 G-key 찬양입니다. F-key 와 A-key 악보도 있습니다!'
+        }
+      ]
+    )
   },
 
-  async down (queryInterface, Sequelize) {
-    /**
-     * Add commands to revert seed here.
-     *
-     * Example:
-     * await queryInterface.bulkDelete('People', null, {});
-     */
+  down: async (queryInterface, Sequelize) => {
+    await queryInterface.bulkDelete('musics', null, {})
   }
 };
