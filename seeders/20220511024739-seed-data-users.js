@@ -1,24 +1,29 @@
 'use strict';
 
 module.exports = {
-  async up (queryInterface, Sequelize) {
-    /**
-     * Add seed commands here.
-     *
-     * Example:
-     * await queryInterface.bulkInsert('People', [{
-     *   name: 'John Doe',
-     *   isBetaMember: false
-     * }], {});
-    */
+  up: async (queryInterface, Sequelize) => {
+    await queryInterface.bulkInsert(
+      'users',
+      [
+        {
+          firstName: 'Ran',
+          lastName: 'Kim',
+          username: 'rankim',
+          email: 'ran@fakeemail.com',
+          passwordDigest: '123123123'
+        },
+        {
+          firstName: 'Paul',
+          lastName: 'Jee',
+          username: 'pauljee',
+          email: 'paul@fakeemail.com',
+          passwordDigest: '123123123'
+        }
+      ]
+    )
   },
 
-  async down (queryInterface, Sequelize) {
-    /**
-     * Add commands to revert seed here.
-     *
-     * Example:
-     * await queryInterface.bulkDelete('People', null, {});
-     */
+  down: async (queryInterface, Sequelize) => {
+    await queryInterface.bulkDelete('users', null, {})
   }
 };
