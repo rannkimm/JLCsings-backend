@@ -14,6 +14,21 @@ const GetAllMusic = async (req, res) => {
     }
 }
 
+const GetIndMusic = async (req, res) => {
+    try{
+        const indMusic = await Music.findByPk(parseInt(req.params.music_id), {
+            include: [
+                { model: User, as: 'user', attributes: ['username'] },
+                {model: Musicsheet, as: 'thisMusic', attributes: ['title', 'image', 'key']}
+            ]
+        })
+        res.send(indMusic)
+    }catch (error) {
+        throw error
+    }
+}
+
 module.exports = {
-    GetAllMusic
+    GetAllMusic,
+    GetIndMusic
 }
