@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       Musicsheet.belongsTo(models.Music, {
         foreignKey: 'music_id',
-        as: 'music',
+        as: 'thisMusic',
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE'
       })

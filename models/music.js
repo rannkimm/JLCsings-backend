@@ -18,9 +18,9 @@ module.exports = (sequelize, DataTypes) => {
         onUpdate: 'CASCADE'
       }),
 
-      Music.hasMany(models.MusicSheet, {
+      Music.hasMany(models.Musicsheet, {
         foreignKey: 'music_id',
-        as: 'music',
+        as: 'thisMusic',
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE'
       })
