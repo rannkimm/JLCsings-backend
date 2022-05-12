@@ -22,14 +22,28 @@ const GetIndUser = async (req, res) => {
     }
 }
 
-const CreateUser = async (req, res) => {
+// const CreateUser = async (req, res) => {
+//     try{
+//         let userBody = {
+//             ...req.body
+//         }
+//         const newUser = await User.create(userBody)
+//         res.send(newUser)
+//     }catch(error) {
+//         throw error
+//     }
+// }
+
+const CreateMusic = async (req, res) => {
     try{
-        let userBody = {
+        const user_id = parseInt(req.params.user_id)
+        let musicBody = {
+            user_id,
             ...req.body
         }
-        const newUser = await User.create(userBody)
-        res.send(newUser)
-    }catch(error) {
+        const newMusic = await Music.create(musicBody)
+        res.send(newMusic)
+    }catch (error) {
         throw error
     }
 }
@@ -37,5 +51,6 @@ const CreateUser = async (req, res) => {
 module.exports = {
     GetAllUsers,
     GetIndUser,
-    CreateUser
+    // CreateUser,
+    CreateMusic
 }
