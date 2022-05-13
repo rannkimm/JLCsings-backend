@@ -65,19 +65,6 @@ const GetAllMusicsheetByKey = async (req, res) => {
     }
 }
 
-const CreateMusic = async (req, res) => {
-    try{
-        const user_id = parseInt(req.params.user_id)
-        let musicBody = {
-            user_id,
-            ...req.body
-        }
-        const newMusic = await Music.create(musicBody)
-        res.send(newMusic)
-    }catch (error) {
-        throw error
-    }
-}
 
 const CreateMusicsheet = async (req, res) => {
     try{
@@ -145,7 +132,6 @@ module.exports = {
     GetAllMusicsheet,
     GetIndMusicsheet,
     GetAllMusicsheetByKey,
-    CreateMusic,
     CreateMusicsheet,
     UpdateMusic,
     UpdateMusicsheet,
