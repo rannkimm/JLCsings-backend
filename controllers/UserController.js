@@ -22,7 +22,7 @@ const GetIndUser = async (req, res) => {
     }
 }
 
-// const CreateUser = async (req, res) => {
+// const Get = async (req, res) => {
 //     try{
 //         let userBody = {
 //             ...req.body
