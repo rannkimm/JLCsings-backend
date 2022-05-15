@@ -19,7 +19,7 @@ const GetIndMusic = async (req, res) => {
         const indMusic = await Music.findByPk(parseInt(req.params.music_id), {
             include: [
                 { model: User, as: 'user', attributes: ['username'] },
-                {model: Musicsheet, as: 'thisMusic', attributes: ['title', 'image', 'key']}
+                {model: Musicsheet, as: 'thisMusic', attributes: ['title', 'image', 'key', 'id']}
             ]
         })
         res.send(indMusic)
